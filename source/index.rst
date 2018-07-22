@@ -11,3 +11,4 @@ Welcome to YAN's BLOG's documentation!
    :caption: Contents:
    
    study
+   technique
