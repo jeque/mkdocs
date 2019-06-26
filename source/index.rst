@@ -10,6 +10,8 @@ IT圈的那些事儿
    :maxdepth: 2
    :caption: Contents:
    
-   study
-   technique
+   linux
+   database
    ML
+   DevOps
+   Python
