@@ -55,33 +55,44 @@ AWS架构师认证
 
 `是一项Web服务，可在云中提供可调整大小的计算容量。`
 
-- AWS Lambda
+- **AWS Lambda**
 
-`是适用于后端Web开发人员的零管理计算平台`，可在AWS云上运行代码，并提供精细的定价结构。`
+`是适用于后端Web开发人员的零管理计算平台，可在AWS云上运行代码，并提供精细的定价结构。`
 
-- Auto Scaling
+- **Auto Scaling**
 
 `允许组织根据为特定工作负载定义的条件自动扩展或缩减Amazon EC2容量。`
 
-- 弹性负载均衡
+- **弹性负载均衡**
 
 `Elastic Load Balancing会自动将传入的应用程序流量分布到云中的多个Amazon EC2实例。它可以实现更高水平的容错能力，无缝地提供应用程序流量所需数量的负载平衡容量。`
 
-- AWS Elastic Beanstalk
+- **AWS Elastic Beanstalk**
 
 `是在AWS上启动并运行Web应用程序的最快速且最简单的方法。开发人员可以简单地上传他们的应用程序代码，并且该服务自动处理所有的细节，例如资源调配、负载平衡、Auto Scaling和监控。它为各种平台提供支持,包括PHP、Java、Python、Ruby、Node.js、.NET和Go。可以全面控制为应用程序提供支持的资源，并可以随时访问底层资源。`
 
-- Amazon VPC
+- **Amazon VPC**
 
 `虚拟私有云允许组织配置AWS Cloud 的逻辑隔离部分，以便他们可以在虚拟网络中启动AWS资源。通过使用AWS Direct Connect， 企业可以使用硬件或软件虚拟专用网络 (VPN)连接或专用电路将公司数据中心网络扩展到AWS。`
 
-- AWS Direct Connect
+- **AWS Direct Connect**
 
 `允许组织建立从其数据中心到AWS的专用网络连接。`
 
-- Amazon Route 53
+- **Amazon Route 53**
 
-`是一种高度可用且可扩展的域名系统(DNS)Web服务。旨在为开发人员和企业提供一种非常可靠且具有成本效益的方式。`
+*是一种高度可用且可扩展的域名系统(DNS)Web服务。旨在为开发人员和企业提供一种非常可靠且具有成本效益的方式。*
+
+存储和内容交付
+#################
+
+*Amazon S3*
+ Amazon Simple Storage Service 为开发人员和IT 团队提供高度持久和可扩展的对象存储，可以存储任何数量的任何对象类型。
+
+*Amazon Glacier*
+ 是一款安全、耐用且成本极低的存储服务，可用于数据归档和长期备份。
+ 
+
 
 
 
