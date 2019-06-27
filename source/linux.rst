@@ -242,7 +242,7 @@ sed元字符集::
 sed用法实例
 ############
 
-**替换操作：s命令**
+**实例1 替换操作：s命令**
 
 *替换文本中的字符串* ::
 
@@ -256,7 +256,58 @@ sed用法实例
 
  sed -i 's/book/books/g' file
  
-**全面替换标记g**
+**实例2 全面替换标记g**
+
+使用后缀 /g 标记会替换每一行中的所有匹配::
+
+ sed 's/book/books/g' file
+ 
+当需要从第N处匹配开始替换时，可以使用 /Ng::
+
+ echo sksksksksksk | sed 's/sk/SK/2g'
+ skSKSKSKSKSK
+
+ echo sksksksksksk | sed 's/sk/SK/3g'
+ skskSKSKSKSK
+
+ echo sksksksksksk | sed 's/sk/SK/4g'
+ skskskSKSKSK
+
+**实例3 定界符**
+
+以上命令中字符 / 在sed中作为定界符使用，也可以使用任意的定界符::
+
+ sed 's:test:TEXT:g'
+ sed 's|test|TEXT|g'
+ 
+定界符出现在样式内部时，需要进行转义::
+
+ sed 's/\/bin/\/usr\/local\/bin/g'
+
+**实例4 删除操作：d命令**
+
+删除空白行::
+
+ sed '/^$/d' file
+ 
+删除文件的第2行::
+
+ sed '2d' file
+ 
+删除文件的第2行到末尾所有行::
+
+ sed '2,$d' file
+ 
+删除文件最后一行::
+
+ sed '$d' file
+ 
+删除文件中所有开头是test的行::
+
+ sed '/^test/'d file
+ 
+**实例5 已匹配字符串标记&**
+
 
 **vi命令详解：**
 ~~~~~~~~~~~~~~~~~
