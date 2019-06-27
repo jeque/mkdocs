@@ -32,9 +32,65 @@ yum大致的原理:
 
  # cd /etc/yum.repos.d/
  # wget -O CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=2
+ 
+如果下载失败，可以将下面我准备好的`CentOS-Base.repo`文件放到`/etc/yum.repos.d/`中::
+
+ # CentOS-Base.repo
+ #
+ # The mirror system uses the connecting IP address of the client and the
+ # update status of each mirror to pick mirrors that are updated to and
+ # geographically close to the client.  You should use this for CentOS updates
+ # unless you are manually picking other mirrors.
+ #
+ # If the mirrorlist= does not work for you, as a fall back you can try the
+ # remarked out baseurl= line instead.
+ #
+ #
+ [base]
+ name=CentOS-6 - Base - mirrors.ustc.edu.cn
+ baseurl=http://mirrors.ustc.edu.cn/centos/6/os/$basearch/
+ #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=os
+ gpgcheck=1
+ gpgkey=http://mirrors.ustc.edu.cn/centos/RPM-GPG-KEY-CentOS-6
+ #released updates
+ [updates]
+ name=CentOS-6 - Updates - mirrors.ustc.edu.cn
+ baseurl=http://mirrors.ustc.edu.cn/centos/6/updates/$basearch/
+ #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=updates
+ gpgcheck=1
+ gpgkey=http://mirrors.ustc.edu.cn/centos/RPM-GPG-KEY-CentOS-6
+ #additional packages that may be useful
+ [extras]
+ name=CentOS-6 - Extras - mirrors.ustc.edu.cn
+ baseurl=http://mirrors.ustc.edu.cn/centos/6/extras/$basearch/
+ #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=extras
+ gpgcheck=1
+ gpgkey=http://mirrors.ustc.edu.cn/centos/RPM-GPG-KEY-CentOS-6
+ #additional packages that extend functionality of existing packages
+ [centosplus]
+ name=CentOS-6 - Plus - mirrors.ustc.edu.cn
+ baseurl=http://mirrors.ustc.edu.cn/centos/6/centosplus/$basearch/
+ #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=centosplus
+ gpgcheck=1
+ enabled=0
+ gpgkey=http://mirrors.ustc.edu.cn/centos/RPM-GPG-KEY-CentOS-6
+ #contrib - packages by Centos Users
+ [contrib]
+ name=CentOS-6 - Contrib - mirrors.ustc.edu.cn
+ baseurl=http://mirrors.ustc.edu.cn/centos/6/contrib/$basearch/
+ #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=contrib
+ gpgcheck=1
+ enabled=0
+ gpgkey=http://mirrors.ustc.edu.cn/centos/RPM-GPG-KEY-CentOS-6
+
+保存并退出后,测试一下这个yum源是否能用, 先清空yum的缓存::
+
  # yum clean all
- # yum -y install vim
  # yum makecache
+ 
+然后测试yum::
+
+ # yum -y install vim
  
 到此为此,我们的http网络yum源已经配置完成。
 
