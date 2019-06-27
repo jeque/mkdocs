@@ -72,7 +72,9 @@ mysql自定义路径二进制安装
  
 除了mysql目录下的data目录和mysql-files目录所属用户不变，其他所有文件的所属用户改为root。
 
-- 修改配置文件::
+- 修改配置文件
+
+执行命令::
 
  vi /etc/my.cnf
 
@@ -133,6 +135,8 @@ mysql自定义路径二进制安装
  mysql> alter user 'root'@'localhost' identified by 'ultranms';
  mysql> quit
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 CentOS 7 下使用yum安装MySQL5.7.25
 ###################################
 
@@ -160,7 +164,9 @@ CentOS7默认数据库是mariadb, 但是 好多用的都是mysql ，但是CentOS
  服务启动脚本：/usr/lib/systemd/system/mysqld.service
  socket文件：/var/run/mysqld/mysqld.pid 
 
-- 配置  my.cnf::
+- 配置my.cnf文件
+
+执行命令::
         
  vim /etc/my.cnf
  
@@ -195,13 +201,19 @@ CentOS7默认数据库是mariadb, 但是 好多用的都是mysql ，但是CentOS
 	
 不过安装完成后，密码为随机密码，需要重置密码。
 
-- 启动mysql服务,重置密码::
+- 启动mysql服务,重置密码
+
+执行命令::
 
  [root@localhost ~]# grep "password" /var/log/mysqld.log 
  
-输入 mysql -u root -p   密码 进入   第一次登陆 ，需要重置密码 要不什么也不能操作。
+输入::
 
-输入命令::
+ mysql -u root -p   
+ 
+输入密码-进入-第一次登陆 ，需要重置密码 要不什么也不能操作。
+
+执行命令::
 
  alter user 'root'@'localhost' identified by 'Root!!2018'; 
  
@@ -213,6 +225,7 @@ CentOS7默认数据库是mariadb, 但是 好多用的都是mysql ，但是CentOS
  
 至此，mysql数据库就安装好了。
 
+------------------------------------------------------------------------------------------------------------------------------------------
 
 **2.mysql端口号查看和修改**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
