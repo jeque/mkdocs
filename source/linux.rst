@@ -13,8 +13,8 @@ yum大致的原理: 当用户使用yum对软件包进行管理时,yum会依据�
 * 元数据信息的存储位置是在yum源中的repodata目录当中
 * 存储yum源位置一般是文件共享服务器(nfs, ftp, http),当然你的安装光盘镜像也能作为yum源
 
-由于这里使用的是rhel 6.5 (Redhat Enterprise Linux 6.5),而红帽认为yum源是收费性的服务,所以我们必须删除原来安装系统时一并安装的yum才行,否则将出现如下信息
-|logo|
+由于这里使用的是rhel 6.5 (Redhat Enterprise Linux 6.5),而红帽认为yum源是收费性的服务,所以我们必须删除原来安装系统时一并安装的yum才行,否则将出现如下信息 |logo| 
+
 .. |logo| image:: https://github.com/jeque/mkdocs/images/image_1.png
 
 rehl6.4 安装本地yum源：
