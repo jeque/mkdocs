@@ -14,4 +14,5 @@ IT圈的那些事儿
    database
    DevOps
    Python
-   ML
+   AI
+   CertiLearning
