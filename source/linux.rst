@@ -9,9 +9,10 @@ Linux系统相关知识
 yum 是 yellowdog updater modified 简称,说白了就是升级版的rpm, yum的出现主要是由于rpm的那烦人的依赖关系所致,yum能够自动解决软件包之间的各种依赖关系。
 
 yum大致的原理:
-	当用户使用yum对软件包进行管理时,yum会依据它的配置文件到指定的yum源去下载所有在yum源中与软件包相关的元数据信息并将这些信息缓存到本地,然后依据这些信息对软件包的依赖性进行分析并尝试将其解决, 接着就是到yum源中下载相关的软件包到本地并开始安装
+*当用户使用yum对软件包进行管理时,yum会依据它的配置文件到指定的yum源去下载所有在yum源中与软件包相关的元数据信息并将这些信息缓存到本地,然后依据这些信息对软件包的依赖性进行分析并尝试将其解决, 接着就是到yum源中下载相关的软件包到本地并开始安装*
 
 注:
+
 - yum的配置文件/etc/yum.conf和/etc/yum.repos.d/*.repo
 - yum的本地缓存位置是在/etc/yum.conf当中定义的,默认位置为/var/cache/yum目录
 - 元数据信息的存储位置是在yum源中的repodata目录当中
@@ -20,6 +21,10 @@ yum大致的原理:
 由于这里使用的是rhel 6.5 (Redhat Enterprise Linux 6.5),而红帽认为yum源是收费性的服务,所以我们必须删除原来安装系统时一并安装的yum才行,否则将出现如下信息
 
 .. image:: https://raw.githubusercontent.com/jeque/mkdocs/master/images/image1.png
+
+解决的方法就是把subscription-manager删除即可。::
+ # rpm -e subscription-manager
+
 
 **情景二、rehl6.4 安装本地yum源:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
