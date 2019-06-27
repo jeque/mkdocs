@@ -107,7 +107,7 @@ yum大致的原理:
  
 接着就是要编辑yum的配置文件::
 
- #  cd /etc/yum.repos.d/
+ # cd /etc/yum.repos.d/
  # vi rhel-media.repo
  
 写入如下内容::
@@ -133,6 +133,33 @@ yum大致的原理:
 
 **情景三、保留yum安装后的rpm包:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在linux上，使用yum安装，默认安装完成之后会删除下载的rpm包；想要yum安装软件后，还保留安装包，那么需要修改/etc/yum.conf配置文件中的keepcache参数::
+
+ [root@bogon ~]# cat /etc/yum.conf 
+ [main]
+ cachedir=/var/cache/yum/$basearch/$releasever 【安装包保存位置】
+ `keepcache=0` 【默认0是不保存安装包，改为1即可】
+ debuglevel=2
+ logfile=/var/log/yum.log
+ exactarch=1
+ obsoletes=1
+ gpgcheck=1
+ plugins=1
+ installonly_limit=5
+ bugtracker_url=http://bugs.centos.org/set_project.php?project_id=16&ref=http://bugs.centos.org/bug_report_page.php?category=yum
+ distroverpkg=centos-release
+
+使用vim或者sed修改::
+
+ [root@bogon ~]# sed -n 's#keepcache=0#keepcache=1#gp' /etc/yum.conf 
+ keepcache=1 【最好先不要用-i参数直接修改源文件，先输出看修改是否正确，或者先备份yum.conf配置文件】
+ [root@bogon ~]# sed -i 's#keepcache=0#keepcache=1#g' /etc/yum.conf  【-i修改源文件配置】
+ [root@bogon ~]# grep "keepcache" /etc/yum.conf【检查是否已修改】
+ keepcache=1
+ 
+把文件夹下的所有rpm包复制到指定文件夹::
+
+ # cp $(find /var/cache/yum/ -name "*.rpm") /root/packages/ # 把下载的rpm包拷贝到你建的文件夹
 
 2.文本编辑命令详解
 ---------------------
