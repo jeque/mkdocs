@@ -96,11 +96,26 @@ AWS架构师认证
 数据库服务
 ##############
 
+- *Amazon关系数据库服务(Amazon RDS)*
+
+
+- *Amazon DynamoDB*
+
+
+- *Amazon Redshift*
+
+
+- *Amazon ElasticCache*
 
 
 
+管理工具
+###########
+
+- *Amazon CloudWatch*
 
 
+ 
 
 
 **第二部分：Amazon S3**
