@@ -96,6 +96,8 @@ yum大致的原理:
 
 **情景二、rehl6.4 安装本地yum源:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. role:: red
+
 由于我们是在虚拟机中作测试,所以得用虚拟机模拟将光盘插入虚拟机的光驱中虚拟机(virtual machine) --> 设置(settings) --> CD/DVD(IDE),里指定操作系统的ISO镜像文件。
 如果是物理机，则需要进入机房找到服务器，在光驱里面放入安装光盘。这个相对而言比较麻烦，所以一般最好复制光盘文件到本地硬盘。
 
@@ -137,8 +139,8 @@ yum大致的原理:
 
  [root@bogon ~]# cat /etc/yum.conf 
  [main]
- **cachedir=/var/cache/yum/$basearch/$releasever** 【安装包保存位置】
- **keepcache=0** 【默认0是不保存安装包，改为1即可】
+ cachedir=/var/cache/yum/$basearch/$releasever 【安装包保存位置】
+ keepcache=0 【默认0是不保存安装包，改为1即可】
  debuglevel=2
  logfile=/var/log/yum.log
  exactarch=1
