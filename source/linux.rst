@@ -96,8 +96,42 @@ yum大致的原理:
 
 **情景二、rehl6.4 安装本地yum源:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+由于我们是在虚拟机中作测试,所以得用虚拟机模拟将光盘插入虚拟机的光驱中虚拟机(virtual machine) --> 设置(settings) --> CD/DVD(IDE),里指定操作系统的ISO镜像文件。
+如果是物理机，则需要进入机房找到服务器，在光驱里面放入安装光盘。这个相对而言比较麻烦，所以一般最好复制光盘文件到本地硬盘。
 
-**情景三、linux 保留yum安装后的rpm包:**
+.. image:: https://raw.githubusercontent.com/jeque/mkdocs/master/images/image2.png
+
+然后再把光盘挂载到/media目录当中::
+
+ # mount -r /dev/sr0 /media
+ 
+接着就是要编辑yum的配置文件::
+
+ #  cd /etc/yum.repos.d/
+ # vi rhel-media.repo
+ 
+写入如下内容::
+
+ [media]
+  
+ name=Red Hat Enterprise Linux 6.6                               
+  
+ baseurl=file:///mnt/cdrom                                        
+  
+ enabled=1                                                         
+ 
+ gpgcheck=1                                                       
+  
+ gpgkey=file:///mnt/cdrom/RPM-GPG-KEY-redhat-release 
+
+清除原有缓存::
+
+ # yum clean all
+ # yum makecache
+
+这样我们本地光盘yum源就配置完成了。
+
+**情景三、保留yum安装后的rpm包:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2.文本编辑命令详解
