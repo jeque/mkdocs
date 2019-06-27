@@ -22,9 +22,21 @@ yum大致的原理:
 
 .. image:: https://raw.githubusercontent.com/jeque/mkdocs/master/images/image1.png
 
-解决的方法就是把subscription-manager删除即可。::
+解决的方法就是把subscription-manager删除即可::
+ 
  # rpm -e subscription-manager
 
+**配置网络http的yum源**
+
+配置网络http的yum源比较简单,这里我们选择中国科技大学的yum源镜像站点,需要做的事情就是使用wget下载下面这个文件::
+
+ # cd /etc/yum.repos.d/
+ # wget -O CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=2
+ # yum clean all
+ # yum -y install vim
+ # yum makecache
+ 
+到此为此,我们的http网络yum源已经配置完成。
 
 **情景二、rehl6.4 安装本地yum源:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
