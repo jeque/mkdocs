@@ -15,7 +15,7 @@ yum大致的原理: 当用户使用yum对软件包进行管理时,yum会依据�
 
 由于这里使用的是rhel 6.5 (Redhat Enterprise Linux 6.5),而红帽认为yum源是收费性的服务,所以我们必须删除原来安装系统时一并安装的yum才行,否则将出现如下信息
 
-.. image:: https://github.com/jeque/mkdocs/blob/master/images/image1.png
+.. image:: https://raw.githubusercontent.com/jeque/mkdocs/master/images/image1.png
 
 rehl6.4 安装本地yum源：
 
