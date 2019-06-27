@@ -4,8 +4,8 @@ Linux系统相关知识
 1.yum源配置方法
 ---------------------
 
-# rhel6配置http yum源：
-
+**rhel6配置http yum源:**
+~~~~~~~~~~~~~~~~~~~~~~~~~
 yum 是 yellowdog updater modified 简称,说白了就是升级版的rpm, yum的出现主要是由于rpm的那烦人的依赖关系所致,yum能够自动解决软件包之间的各种依赖关系。
 
 yum大致的原理:
@@ -21,10 +21,10 @@ yum大致的原理:
 
 .. image:: https://raw.githubusercontent.com/jeque/mkdocs/master/images/image1.png
 
-# rehl6.4 安装本地yum源：
-
-# linux 保留yum安装后的rpm包：
-
+**rehl6.4 安装本地yum源:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**linux 保留yum安装后的rpm包:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2.文本编辑命令详解
 ---------------------
