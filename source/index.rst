@@ -12,6 +12,6 @@ IT圈的那些事儿
    
    linux
    database
-   ML
    DevOps
    Python
+   ML
