@@ -137,8 +137,8 @@ yum大致的原理:
 
  [root@bogon ~]# cat /etc/yum.conf 
  [main]
- cachedir=/var/cache/yum/$basearch/$releasever 【安装包保存位置】
- `keepcache=0` 【默认0是不保存安装包，改为1即可】
+ **cachedir=/var/cache/yum/$basearch/$releasever** 【安装包保存位置】
+ **keepcache=0** 【默认0是不保存安装包，改为1即可】
  debuglevel=2
  logfile=/var/log/yum.log
  exactarch=1
