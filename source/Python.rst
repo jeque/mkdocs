@@ -67,7 +67,46 @@ Python基础
 				exit()
 				
 	if __name__ = '__main__':
-		pt = Fibonacci()
+		f = Fibonacci()
+		
+- *概率计算*
+
+编写Ballprobability.py
+
+.. code-block:: python
+	:linenos:
+	
+	#! /usr/bin/env python
+	#-*- coding: utf-8 -*-
+	__author__ = 'Yan'
+	
+	import random
+	
+	classs SelectBall(object):
+		'''随机选取10个球中1个球的概率'''
+		def __init__(self):
+			self.fList = [0,1] #设置初始列表
+			self.run()
+			
+		def run(self):
+			while True:
+				numStr = raw_input('输入测试的次数:')
+				try:
+					num = int(numStr)
+				except ValueError:
+					print(u'要求输入一个整数')
+					continue
+				else:
+					break
+			ball = [0, 0, 0 ,0, 0, 0 ,0, 0, 0 ,0]
+			for i in xrange(num):
+				n = random.randint(1,10)
+				ball[n-1] +=1
+			for i in xrange(1,11):
+				print(u'获取第%d 号球的概率为%f' %(i, ball[n-1]*1.0/num))
+				
+	if __name__ = '__main__':
+		SB = SelectBall()
 
 **2.mysql端口号查看和修改**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
