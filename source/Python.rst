@@ -9,7 +9,8 @@ Python基础
 
 - *九九乘法表*
 
-编写table9x9.py
+编写table9x9.py::
+
 .. code-block:: python
     :linenos:
 	
