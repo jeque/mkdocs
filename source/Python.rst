@@ -1,12 +1,38 @@
 Python语言学习笔记
 ======================
-入门与基本类型和运算
+
+Python基础
 ---------------------
 
-**1.mysql数据库的安装**
+**1.Python编程入门**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- linux之间从本地复制文件到远程
+- *九九乘法表*
+
+编写table9x9.py
+.. code-block:: python
+    :linenos:
+	
+	#! /usr/bin/env python
+	#-*- coding: utf-8 -*-
+	__author__ = 'Yan'
+	
+	classs PrintTable(object):
+		'''打印九九乘法表'''
+		def __init__(self):
+			print(u'开始打印9X9的乘法表格')
+			self.print99()
+			
+		def print99(self):
+			for i in xrange(1,10):
+				for j in xrange(1,10):
+					print('%dX%d=%2s ' %(j,i,i*j)),
+				print('\n')
+				
+	if __name__ = '__main__':
+		pt = PrintTable()
+		
+
 - snmp安装
 
 **2.mysql端口号查看和修改**
