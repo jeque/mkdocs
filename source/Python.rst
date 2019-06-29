@@ -7,9 +7,10 @@ Python基础
 **1.Python编程入门**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- *九九乘法表*
+*九九乘法表*
+###############
 
-编写table9x9.py
+- *编写table9x9.py*
 
 .. code-block:: python
 	:linenos:
@@ -34,9 +35,10 @@ Python基础
 		pt = PrintTable()
 		
 
-- *斐波那契数列*
+*斐波那契数列*
+################
 
-编写fibonacci.py
+- *方法1：编写fibonacci.py*
 
 .. code-block:: python
 	:linenos:
@@ -69,9 +71,38 @@ Python基础
 	if __name__ = '__main__':
 		f = Fibonacci()
 		
-- *概率计算*
+- *方法2：编写fibs.py*
 
-编写Ballprobability.py
+.. code-block:: python
+	:linenos:
+	
+	#! /usr/bin/env python
+	#-*- coding: utf-8 -*-
+	__author__ = 'Yan'
+	
+	import time
+	
+	def fbis(num):
+		result = [0,1]
+		for i in range(num-2):
+			result.append(result[-2] +result[-1])
+		return result
+	
+	def main():
+		result = fbis(10)
+		fobj = open('E:\\result.txt', 'w+')
+		for i, num in enumerate(result):
+			print(u'第%d个数是： %d' % (i,num)
+			fobj.write('%d'%num)
+			time.sleep(1)
+	
+	if __name__ = '__main__':
+		main()
+
+*概率计算*
+###########
+
+- *编写Ballprobability.py*
 
 .. code-block:: python
 	:linenos:
