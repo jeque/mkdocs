@@ -11,8 +11,9 @@ Python基础
 
 编写table9x9.py::
 
-.. code-block:: python
-    :linenos:
+ .. code-block:: python
+	
+	:linenos:
 	
 	#! /usr/bin/env python
 	#-*- coding: utf-8 -*-
@@ -34,7 +35,11 @@ Python基础
 		pt = PrintTable()
 		
 
-- snmp安装
+- *斐波那契数列*
+
+编写fibonacci.py::
+
+
 
 **2.mysql端口号查看和修改**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
