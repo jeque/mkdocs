@@ -7,7 +7,7 @@ IT圈的那些事儿
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
    
    linux
