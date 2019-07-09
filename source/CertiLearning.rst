@@ -887,7 +887,16 @@ RAD：快速开发模型
 	- 享元模式：汉字编码
 	- 代理模式：快捷方式
  + 行为型模式：更大的结构
-	- 职责链模式
+	- 职责链模式(Chains of Responsibility)：传递职责
+	- 命令模式(Command)：日志记录，可撤销
+	- 解释器模式(Interpreter)：虚拟机的机制
+	- 迭代器模式(Iterator)：数据集
+	- 中介者模式(Mediator)：不直接引用
+	- 备忘录模式(Memento):
+	- 观察者模式(Observer)：联动
+	- 状态模式(State)：状态变成类
+	- 策略模式(Strategy)：
+	
 
 
 第三章 论文
